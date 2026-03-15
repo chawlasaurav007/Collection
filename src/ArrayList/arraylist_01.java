@@ -26,5 +26,15 @@ public class arraylist_01 {
 //      format like [1, 2, 3, 4, 5]. That is why arrays show an address while ArrayList prints the actual values.
         System.out.println(l);
 
+
+        //To make the list heterogeneous (store different types) in Java, use Object as the type.
+        List<Object> l1 = new ArrayList<>();
+        l1.add(1);
+        l1.add("saurav");
+        l1.add(3.2);
+        l1.add('a');
+        l1.add(5);
+        System.out.println(l1);
+
     }
 }

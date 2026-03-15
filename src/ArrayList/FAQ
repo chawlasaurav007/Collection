@@ -1,2 +1,7 @@
-Q1 : where is arraylist storing data internally ?
-Ans : it is storing in object array (Object[]).
+Q1 : Where does ArrayList store data internally and why?
+Ans : ArrayList internally stores elements in an Object[] array. It uses an object array because in Java every class
+      is a child of Object, so this allows ArrayList to store any type of object.
+      If interviewer asks for example
+      Example:
+      In an employee management system, initially we may store name and age, later we may need address, salary, or
+      department. Since different types of data may be stored, ArrayList uses Object[] internally to store any object.
