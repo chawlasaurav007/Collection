@@ -1,0 +1,2 @@
+Q1 : where is arraylist storing data internally ?
+Ans : it is storing in object array (Object[]).
