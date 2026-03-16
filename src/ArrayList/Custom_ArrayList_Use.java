@@ -23,6 +23,7 @@ public class Custom_ArrayList_Use {
         System.out.println("size is " + c.size());
 
         c.remove(2);
+        c.remove(3);
 
         System.out.println(c);
 

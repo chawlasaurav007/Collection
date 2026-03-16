@@ -58,21 +58,33 @@ public class Custom_Vector {
 
     public synchronized void remove(int indexToBeDeleted) throws Exception {
 
+//        if(indexToBeDeleted >= index || indexToBeDeleted < 0){
+//            throw new Exception("Index not found");
+//        }
+//
+//        Object[] o = new Object[arr.length - 1];
+//
+//        for(int i = 0; i < o.length; i++){
+//            if(i < indexToBeDeleted){
+//                o[i] = arr[i];
+//            }else{
+//                o[i] = arr[i + 1];
+//            }
+//        }
+//
+//        arr = o;
+//        index--;
+
+
         if(indexToBeDeleted >= index || indexToBeDeleted < 0){
             throw new Exception("Index not found");
         }
 
-        Object[] o = new Object[arr.length - 1];
-
-        for(int i = 0; i < o.length; i++){
-            if(i < indexToBeDeleted){
-                o[i] = arr[i];
-            }else{
-                o[i] = arr[i + 1];
-            }
+        for(int i = indexToBeDeleted; i < index - 1; i++){
+            arr[i] = arr[i + 1];
         }
 
-        arr = o;
+        arr[index - 1] = null;
         index--;
     }
 }
