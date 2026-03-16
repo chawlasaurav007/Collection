@@ -5,3 +5,16 @@ Ans : ArrayList internally stores elements in an Object[] array. It uses an obje
       Example:
       In an employee management system, initially we may store name and age, later we may need address, salary, or
       department. Since different types of data may be stored, ArrayList uses Object[] internally to store any object.
+
+Q2 : Why do we need to override toString() method?
+Ans : If we do not override the toString() method, then when we use System.out.println(object), Java will call the
+      default toString() method of the Object class, which prints the reference value (ClassName + hashcode) of the
+      object. But if we override the toString() method, then whatever logic we write inside it to display the object
+      data will be executed. So when we use System.out.println(l), it will print the actual data present inside the
+      array or object instead of the reference value.
+
+      If we are using our own custom class(ex : Custom_ArrayList), then we usually need to override the toString()
+      method so that when we print the object using System.out.println(object), it prints the actual data of the object
+      instead of the reference value. But if we use predefined classes like ArrayList, LinkedList, HashMap, etc., we do
+      not need to override toString() because these classes have already overridden the toString() method internally,
+      so they automatically print the actual data stored inside them.
