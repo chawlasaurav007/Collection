@@ -13,6 +13,7 @@ public class Custom_ArrayList_Use {
         c.add(7);
         c.add(7);
         c.add(3);
+        c.add(14);
 
         System.out.println(c);
 
