@@ -1,5 +1,7 @@
 package Vector;
 
+//Vector is  same like Arraylist only but the methods of Vector are Synchronized
+//ArrayList methods are Non-Synchronized
 public class Custom_Vector {
     Custom_Vector(int size){
         arr = new Object[size];
