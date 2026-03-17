@@ -18,3 +18,10 @@ Ans : If we do not override the toString() method, then when we use System.out.p
       instead of the reference value. But if we use predefined classes like ArrayList, LinkedList, HashMap, etc., we do
       not need to override toString() because these classes have already overridden the toString() method internally,
       so they automatically print the actual data stored inside them.
+
+Q3: On transaction what will you prefer — ArrayList or Vector?
+Ans : If the choice is only between ArrayList and Vector, I would choose Vector because it is synchronized and
+      thread-safe, which helps when multiple transactions occur at the same time. However, in real-world systems,
+      developers usually prefer ArrayList and handle concurrency using utilities like Collections.synchronizedList() or
+      CopyOnWriteArrayList. In addition, database transactions (ACID properties) are used to maintain data consistency
+      and correct balance.
