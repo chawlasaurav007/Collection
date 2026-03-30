@@ -2,12 +2,12 @@ package ArrayList;
 
 public class Custom_ArrayList {
 
+    Object[] arr = null;
+    int index = 0;
+
     Custom_ArrayList(int size){
         arr = new Object[size];
     }
-
-    Object[] arr = null;
-    int index = 0;
 
     public void add(Object obj){
 
