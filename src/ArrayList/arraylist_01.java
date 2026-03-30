@@ -36,5 +36,29 @@ public class arraylist_01 {
         l1.add(5);
         System.out.println(l1);
 
+        //Suppose iam using ArrayList like this just to print the data
+        List<Integer> l2 = new ArrayList<>();
+        l2.add(11);
+        l2.add(22);
+        l2.add(12);
+        l2.add(21);
+
+        //so it is just printing the data because here toString() method is already been overridden
+        //in arraylist class because we use to create a list using arraylist
+        System.out.println("l2 "+l2);
+
+
+        //now suppose i use custom arraylist and then print data it will give me the reference value
+        Custom_ArrayList c1 = new Custom_ArrayList(5);
+        c1.add(10);
+        c1.add(11);
+        c1.add(12);
+        c1.add(13);
+        c1.add(14);
+
+        //so here we have not overridden toString method in Custom_ArrayList class so that is why its giving the output
+        // as reference address
+        System.out.println(c1);//Output : ArrayList.Custom_ArrayList@2a84aee7
+
     }
 }
