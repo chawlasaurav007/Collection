@@ -59,5 +59,6 @@ public class arraylist_01 {
         //so here we have not overridden toString method in Custom_ArrayList class so that is why its giving the output
         // as reference address
         System.out.println(c1);//Output : ArrayList.Custom_ArrayList@2a84aee7
+
     }
 }
