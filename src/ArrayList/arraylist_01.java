@@ -60,5 +60,6 @@ public class arraylist_01 {
         // as reference address
         System.out.println(c1);//Output : ArrayList.Custom_ArrayList@2a84aee7
 
+
     }
 }
