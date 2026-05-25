@@ -61,5 +61,6 @@ public class arraylist_01 {
         System.out.println(c1);//Output : ArrayList.Custom_ArrayList@2a84aee7
 
 
+
     }
 }
