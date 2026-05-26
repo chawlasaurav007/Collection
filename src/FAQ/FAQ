@@ -19,7 +19,40 @@ Ans : If we do not override the toString() method, then when we use System.out.p
       not need to override toString() because these classes have already overridden the toString() method internally,
       so they automatically print the actual data stored inside them.
 
-Q3: On transaction what will you prefer — ArrayList or Vector?
+Q3 : When i am printing arraylist object i am getting data as output and when iam printing array
+     object then i am getting address/reference as output why ?
+Ans :
+* **ArrayList** overrides `toString()` method internally.
+* So when you print an `ArrayList`, Java automatically prints the **elements**.
+
+Example:
+List<Integer> list = Arrays.asList(10,20,30);
+System.out.println(list);
+
+Output:
+[10, 20, 30]
+
+
+* **Array** does **not** override `toString()`.
+* So when you print an array, Java prints **memory reference (address-like value)** instead of elements.
+
+Example:
+int[] arr = {10,20,30};
+System.out.println(arr);
+
+Output:
+[I@36baf30c
+
+To print array elements properly:
+System.out.println(Arrays.toString(arr));
+
+Output:
+[10, 20, 30]
+
+**Simple line for interview:**
+"ArrayList has its own `toString()` implementation, but array does not, so array prints reference value instead of actual data."
+
+Q4 : On transaction what will you prefer — ArrayList or Vector?
 Ans : If the choice is only between ArrayList and Vector, I would choose Vector because it is synchronized and
       thread-safe, which helps when multiple transactions occur at the same time. However, in real-world systems,
       developers usually prefer ArrayList and handle concurrency using utilities like Collections.synchronizedList() or
