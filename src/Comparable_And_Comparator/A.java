@@ -30,7 +30,7 @@ public class A {
         l1.add(e1);
         l1.add(e3);
         l1.add(e4);
-        System.out.println("Before Sorting");
+        System.out.println("Before Sorting : it means insertion order : ");
         System.out.println(l1);//so it will follow the insertion order
         //now we need to sort
 
@@ -44,14 +44,13 @@ public class A {
         // we need to implement Comparable or provide Comparator logic.
 
         Collections.sort(l1);
-        System.out.println("After sorting");
+        System.out.println("After sorting : Sort employee by employee id : ");
+
         System.out.println(l1);
 
-
-
-
-
-
+        System.out.println("will sort employee by employee name");
+        Collections.sort(l1,new SortEmployeeByName());
+        System.out.println(l1);
 
     }
 }
