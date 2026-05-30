@@ -106,6 +106,7 @@ public class CustomLinkedList {
                          temp= temp.next;
                      }
                  }
+                 //this is for last index get(lastIndex)
                  if(temp.CustomNodeIndex==indexPassed){
                      return temp.data;
                  }
