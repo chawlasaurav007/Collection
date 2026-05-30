@@ -139,4 +139,54 @@ public class CustomLinkedList {
         }
     }
 
+    // in this code(remove) we use flag
+    // boolean flag = false;
+    // We use flag to track whether the node was found and removed.
+    // If flag becomes true, it means the node was already deleted
+    // (either from the head or middle of the list).
+    // If flag remains false after the loop, it means the node was
+    // not found in the head or middle, so we check whether the
+    // last node contains the value to be removed.
+    public void remove(Object obj) {
+       if(head!=null){
+           CustomeNode temp = head;// temp = 10
+           CustomeNode previous=null;
+           boolean flag = false;
+
+           //removing the node from starting
+           //40->10->20->30  --- remove(40)
+           if(head.data.equals(obj)){
+               flag = true;
+               CustomeNode tempHead = head.next;
+               head.next = null ;
+               head = tempHead;
+               return;
+           }
+
+           //removing the node from the middle
+           //10->20->30->40->50  --- remove(40)
+           while(temp.next!=null){
+               if(temp.data.equals(obj)){ // 40.data == 40
+                   CustomeNode nextAdd=temp.next;
+                   previous.next = nextAdd;
+                   temp.next = null;
+                   flag = true;
+                   break;
+               }
+               else{
+                   previous = temp; // previous = 30
+                   temp = temp.next;//temp = 40
+               }
+           }
+
+           //suppose if we want to remove the last node
+           //10->20->30->40  --- remove(40)
+           if(flag==false){
+               if(temp.data.equals(obj)){
+                   previous.next = null;
+                   temp = null;
+               }
+           }
+       }
+    }
 }
