@@ -47,17 +47,18 @@ public class CustomLinkedList {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        CustomeNode n = head;
         sb.append("[");
-        while (n != null) {
-            sb.append(n.data);
-            if (n.next != null) {
-                sb.append(", ");
+        if(head==null){
+            return sb.toString().concat("]");
+        }else{
+            CustomeNode n = head;
+            while(n.next!=null){
+                sb.append(n.data+", ");
+                n=n.next;
             }
-            n = n.next;
+            sb.append(n.data);
         }
-         sb.append("]");
-        return sb.toString();
+        return sb.toString().concat("]");
     }
 
 

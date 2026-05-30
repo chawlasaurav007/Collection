@@ -21,7 +21,7 @@ public class LinkedListIntro {
         c1.insert(10);
         c1.insert(20);
         c1.insert(15);
-        c1.insert(20);
+        c1.insert(200);
         System.out.println(c1);//LinkedList.CustomLinkedList@4a574795 but we want actual data
 
 
