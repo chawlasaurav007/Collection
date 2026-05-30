@@ -13,6 +13,9 @@ public class CustomLinkedList {
          }
     }
 
+    //at the end it will add ex : 10->20->30
+    //now u want to add 40 so it will add at the end
+    //10->20->30->40 like this
     public void insert(Object obj){
         //so internally Custom linked list will use CustomeNode to store the data
         CustomeNode cl = new CustomeNode(obj);
@@ -41,6 +44,21 @@ public class CustomLinkedList {
 
             //when while loop breaks then we are coming to this line and where ever we get null we link with next node
             n.next = cl;//this line means linking up to nodes (10.next = 20)
+        }
+    }
+
+    // we need to add before the starting point so suppose there is already linked list
+    // present 10->20->30
+    // so we need to add at starting
+    // 100->10->20->30 like this
+    public void insertBeforeHead(Object obj){
+        CustomeNode cl = new CustomeNode(obj);
+        if(head==null){
+            head = cl;
+        } else {
+            CustomeNode temp = head;
+            cl.next = temp;
+            head = cl;
         }
     }
 
