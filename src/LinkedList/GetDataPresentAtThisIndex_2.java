@@ -18,6 +18,8 @@ public class GetDataPresentAtThisIndex_2 {
         c.insert(12);
         c.insert(24);
         c.insert(27);
-        System.out.println(c.get(1));
+        System.out.println(c.get(1));//12
+        // System.out.println(c.get(11));//index not found
+        // System.out.println(c.get(-1));//index not found
     }
 }
