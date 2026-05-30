@@ -4,6 +4,7 @@ public class CustomLinkedList {
     //here we are creating head
     CustomeNode head;//its having value null
     int index = 0 ;
+
     class CustomeNode{
         //in internal linkedlist u can see we have index also we use like this l.get(3) which means
         // at 3rd node or index what ever data is present give me that
@@ -113,6 +114,29 @@ public class CustomLinkedList {
              }
         }
         return null;
+    }
+
+    //10->20->30->40
+    //after 20 i want to add 25
+    //output - 10->20->25->30->40
+    public void insertAtSpecifiedPosition(Object newData, Object AfterNode) {
+        CustomeNode cl  = new CustomeNode(newData,index);
+        if(head!=null){
+            CustomeNode temp = head;
+            while(temp.next!=null){
+                if(temp.data.equals(AfterNode)){
+                    CustomeNode cn = temp.next;
+                    temp.next = cl ;
+                    cl.next = cn;
+                    break;
+                }else{
+                    temp= temp.next;
+                }
+            }
+            if(temp.next.equals(AfterNode)){
+                temp.next = cl;
+            }
+        }
     }
 
 }
