@@ -3,14 +3,19 @@ package LinkedList;
 public class CustomLinkedList {
     //here we are creating head
     CustomeNode head;//its having value null
-
+    int index = 0 ;
     class CustomeNode{
+        //in internal linkedlist u can see we have index also we use like this l.get(3) which means
+        // at 3rd node or index what ever data is present give me that
+        //so like this we will make our own customelinked list which have index in it
+
          Object data;//initially value of data will be null
          CustomeNode next;//value will be null initially
-
-        CustomeNode(Object data){
+         int CustomNodeIndex;
+        CustomeNode(Object data,int in){
              this.data = data; //here we insert the data
-         }
+             this.CustomNodeIndex =  in;
+        }
     }
 
     //at the end it will add ex : 10->20->30
@@ -18,7 +23,7 @@ public class CustomLinkedList {
     //10->20->30->40 like this
     public void insert(Object obj){
         //so internally Custom linked list will use CustomeNode to store the data
-        CustomeNode cl = new CustomeNode(obj);
+        CustomeNode cl = new CustomeNode(obj,index);
         if(head==null){
             head = cl ;
         }else{
@@ -45,6 +50,7 @@ public class CustomLinkedList {
             //when while loop breaks then we are coming to this line and where ever we get null we link with next node
             n.next = cl;//this line means linking up to nodes (10.next = 20)
         }
+        index++;
     }
 
     // we need to add before the starting point so suppose there is already linked list
@@ -52,7 +58,7 @@ public class CustomLinkedList {
     // so we need to add at starting
     // 100->10->20->30 like this
     public void insertBeforeHead(Object obj){
-        CustomeNode cl = new CustomeNode(obj);
+        CustomeNode cl = new CustomeNode(obj,index);
         if(head==null){
             head = cl;
         } else {
@@ -60,6 +66,7 @@ public class CustomLinkedList {
             cl.next = temp;
             head = cl;
         }
+        index++;
     }
 
     @Override
@@ -79,5 +86,32 @@ public class CustomLinkedList {
         return sb.toString().concat("]");
     }
 
+    //now suppose at this node we want to retrieve the data so we will create a method for this
+    //ex : at two index what is the data we want to retrive
+    //10->20->30
+    //output is 30
+
+    public Object get(int indexPassed) throws Exception {
+        if(indexPassed<0 || indexPassed>=index){
+            throw new Exception("index not found");
+        }else{
+             if (head==null){
+                 throw new Exception("Linked List Empty");
+             }else {
+                 CustomeNode temp =head;
+                 while(temp.next!=null){
+                     if(temp.CustomNodeIndex==indexPassed){
+                          return temp.data;
+                     }else{
+                         temp= temp.next;
+                     }
+                 }
+                 if(temp.CustomNodeIndex==indexPassed){
+                     return temp.data;
+                 }
+             }
+        }
+        return null;
+    }
 
 }
