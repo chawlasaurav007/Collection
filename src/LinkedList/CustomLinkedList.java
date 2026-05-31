@@ -3,6 +3,7 @@ package LinkedList;
 public class CustomLinkedList {
     //here we are creating head
     CustomeNode head;//its having value null
+    CustomeNode last;//i will use this in add() method which will reduce our time
     int index = 0 ;
 
     class CustomeNode{
@@ -22,6 +23,13 @@ public class CustomLinkedList {
     //at the end it will add ex : 10->20->30
     //now u want to add 40 so it will add at the end
     //10->20->30->40 like this
+    //through this approach insert() it takes lots of time suppose u have already stored 1000 nodes and u want to
+    //insert 1001 nodes so from the below insert code u need to traverse from starting to 1000 and then
+    // u will add 1001 node after 1000 node so this takes a lot of time
+    //matlab ab ek node ko end mai add krne ke liye mereko shuru se traverse krna padega which will take lots of
+    //time but isse hum traverse krna sikh gye hai
+    //but we need to change the approach because it takes lots of time
+    //so we will create a method add() which will reduce the time
     public void insert(Object obj){
         //so internally Custom linked list will use CustomeNode to store the data
         CustomeNode cl = new CustomeNode(obj,index);
@@ -53,6 +61,30 @@ public class CustomLinkedList {
         }
         index++;
     }
+
+    //by using this it will reduce the time which means we dont need to traverse from starting to end to add a new
+    // node
+    //or
+    // By using 'last', we don't need to traverse from the head
+    // to the end of the linked list every time we add a new node.
+    // This reduces insertion at the end from O(n) to O(1).
+
+    public void add(Object obj){
+        CustomeNode cl = new CustomeNode(obj,index);
+        if(head==null){
+            // For the first node, both head and last point
+            // to the same node.
+            // head == last
+            //matlab yeh bhi ho sakta hai head.next == last.next
+            head = cl;
+            last = cl;
+        }else{
+            last.next = cl; // Connect the current last node to the new node
+            last = cl;// Move last to the newly added node now last is pointing to newly added node
+        }
+        index++;
+    }
+
 
     // we need to add before the starting point so suppose there is already linked list
     // present 10->20->30
