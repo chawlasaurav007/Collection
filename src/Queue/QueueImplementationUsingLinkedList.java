@@ -42,7 +42,7 @@ public class QueueImplementationUsingLinkedList {
       head.next = null;//suppose ll  is  10->20->30->40
                        //so we need to remove link between 10 and 20 so
                        //10.next = null (head.next = null;)
-                       //by this link is removed
+                       //by this link between 10 and 20  is removed
       head = temp;
       if (head == null) {
             last = null;
